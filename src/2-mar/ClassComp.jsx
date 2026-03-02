@@ -1,5 +1,5 @@
 import React from "react";
-// counter in class comp
+// counter in class comp with props 
 class ClassCounter extends React.Component {
   constructor(props) {
     super(props);
@@ -32,6 +32,50 @@ class ClassCounter extends React.Component {
 }
 
 export default ClassCounter;
+
+// Example with compomnent life cycle method
+// class Lifecycle extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     console.log("cnstructor");
+
+//     this.state = { count: 0 };
+//   }
+
+//   componentDidMount() {
+//     console.log("component did mount");
+//   }
+
+//   shouldComponentUpdate(nextProps, nextState) {
+//     console.log("should component update");
+//     return true;
+//   }
+
+//   componentDidUpdate(prevProps, prevState) {
+//     console.log("component did update");
+//   }
+
+//   componentWillUnmount() {
+//     console.log("component will unmount");
+//   }
+
+//   render() {
+//     console.log("render");
+//     return (
+//       <div>
+//         <h1>{this.state.count}</h1>
+//         <button
+//           onClick={() =>
+//             this.setState({ count: this.state.count + 1 })
+//           }
+//         >
+//           increase
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+// export default Lifecycle;
 
 // basic structure
 // class MyComp extends React.Component {

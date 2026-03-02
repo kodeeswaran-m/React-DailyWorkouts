@@ -1,4 +1,5 @@
 import MyComp from './2-mar/ClassComp'
+import Lifecycle from './2-mar/ClassComp'
 import ClassCounter from './2-mar/ClassComp'
 import Welcome from './2-mar/ClassComp'
 import Counter from './2-mar/Parent'
@@ -20,7 +21,8 @@ function App() {
    {/* Class component */}
    {/* <Welcome name={"sam"}/> */}
    {/* <MyComp/> */}
-   <ClassCounter/>
+   <Lifecycle/>
+   {/* <ClassCounter/> */}
 
     </>
   )
