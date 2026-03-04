@@ -3,81 +3,81 @@ import { useEffect } from "react";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 
 const ReactHookForm = () => {
-  const { control, register, handleSubmit } = useForm({
-    defaultValues: {
-      users: [{ name: "" }],
-    },
-  });
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "users",
-  });
-  console.log(fields);
-  // fields.map((field) => console.log(field));
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>dynamic users</h2>
-      {fields.map((field, index) => (
-        <div key={field.id}>
-          <input
-            {...register(`users.${index}.name`)}
-            placeholder="Enter name"
-          />
-          <button type="button" onClick={() => remove(index)}>
-            Remove
-          </button>
-        </div>
-      ))}
-      <button type="button" onClick={() => append({ name: "" })}>
-        Add User
-      </button>
-      <br />
-      <br />
-      <button type="submit">Submit</button>
-    </form>
-  );
-
-  // const { control, handleSubmit } = useForm();
+  // const { control, register, handleSubmit } = useForm({
+  //   defaultValues: {
+  //     users: [{ name: "" }],
+  //   },
+  // });
+  // const { fields, append, remove } = useFieldArray({
+  //   control,
+  //   name: "users",
+  // });
+  // console.log(fields);
+  // // fields.map((field) => console.log(field));
   // const onSubmit = (data) => {
   //   console.log(data);
   // };
+
   // return (
   //   <form onSubmit={handleSubmit(onSubmit)}>
-  //     <Controller
-  //       name="email"
-  //       control={control}
-  //       defaultValue="raj"
-  //       rules={{ required: "Email is required" }}
-  //       render={({ field, fieldState }) => (
-  //         <TextField
-  //           {...field}
-  //           label="Email"
-  //           variant="outlined"
-  //           error={!!fieldState.error}
-  //           helperText={fieldState.error?.message}
+  //     <h2>dynamic users</h2>
+  //     {fields.map((field, index) => (
+  //       <div key={field.id}>
+  //         <input
+  //           {...register(`users.${index}.name`)}
+  //           placeholder="Enter name"
   //         />
-  //       )}
-  //     />
-  //     <Controller
-  //       name="role"
-  //       control={control}
-  //       defaultValue="admin"
-  //       render={({ field }) => (
-  //         <Select {...field}>
-  //           <MenuItem value="admin">admin</MenuItem>
-  //           <MenuItem value="student">Student</MenuItem>
-  //         </Select>
-  //       )}
-  //     />
-  //     <Button type="submit" variant="contained">
-  //       Submit
-  //     </Button>
+  //         <button type="button" onClick={() => remove(index)}>
+  //           Remove
+  //         </button>
+  //       </div>
+  //     ))}
+  //     <button type="button" onClick={() => append({ name: "" })}>
+  //       Add User
+  //     </button>
+  //     <br />
+  //     <br />
+  //     <button type="submit">Submit</button>
   //   </form>
   // );
+
+  const { control, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="email"
+        control={control}
+        defaultValue="raj"
+        rules={{ required: "Email is required" }}
+        render={({ field, fieldState }) => (
+          <TextField
+            {...field}
+            label="Email"
+            variant="outlined"
+            // error={!!fieldState.error}
+            // helperText={fieldState.error?.message}
+          />
+        )}
+      />
+      <Controller
+        name="role"
+        control={control}
+        defaultValue="admin"
+        render={({ field }) => (
+          <Select {...field}>
+            <MenuItem value="admin">admin</MenuItem>
+            <MenuItem value="student">Student</MenuItem>
+          </Select>
+        )}
+      />
+      <Button type="submit" variant="contained">
+        Submit
+      </Button>
+    </form>
+  );
 
   // const { control, handleSubmit, reset } = useForm();
   // const onSubmit = (data) => {

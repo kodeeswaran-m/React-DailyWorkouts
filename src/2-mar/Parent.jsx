@@ -20,6 +20,7 @@ export default function IndexAsKayComp() {
     </div>
   );
 }
+
 function Row({ name }) {
   const [checked, setChecked] = useState(false);
   return (

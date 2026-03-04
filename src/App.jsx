@@ -10,12 +10,23 @@ import Parent from "./2-mar/Parent";
 import ControlledForm from "./3-mar/Form";
 import "./App.css";
 import UnControlledForm from "./3-mar/Form";
+import ReactHookForm from "./3-mar/Form";
+import { EmployeeProvider, UserProvider } from "./4-mar/context/context";
+import FormPage, { DisplayEmployee } from "./4-mar/practice";
+import Hooks from "./4-mar/Hooks";
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
-      <UnControlledForm />
+      <Hooks />
+      {/* <FormPage />
+      <EmployeeProvider>
+        <DisplayEmployee />
+      </EmployeeProvider> */}
+
+      {/* <ReactHookForm/> */}
+      {/* <UnControlledForm /> */}
       {/* <ControlledForm/> */}
       {/* <StrictModeComp/> */}
 
