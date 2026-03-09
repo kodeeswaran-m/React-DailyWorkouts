@@ -1,3 +1,6 @@
+
+
+
 import { StrictMode } from "react";
 import MyComp from "./2-mar/ClassComp";
 import Lifecycle from "./2-mar/ClassComp";
@@ -14,12 +17,28 @@ import ReactHookForm from "./3-mar/Form";
 import { EmployeeProvider, UserProvider } from "./4-mar/context/context";
 import FormPage, { DisplayEmployee } from "./4-mar/practice";
 import Hooks from "./4-mar/Hooks";
+import PerformanceHooks from "./5-mar/PerformanceHooks";
+import CustomHooks from "./5-mar/CustomHooks";
+import Routing from "./6-mar/routingWithoutReactRouter/Routing";
+import BrowserRouterComp from "./6-mar/routingWithReactRouter/BrowserRouter";
+import DynamicRouting from "./6-mar/routingWithReactRouter/DynamicRouting/DynamicRouting";
+import NewRouter from "./6-mar/routingWithReactRouter/loader/NewRouter";
+import OtherRouters from "./6-mar/routingWithReactRouter/OtherRouters";
+import HOCExample from "./6-mar/HOCandForwardRef/UsersList";
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
-      <Hooks />
+    <HOCExample/>
+    {/* <OtherRouters/> */}
+    {/* <NewRouter/> */}
+    {/* <DynamicRouting/> */}
+    {/* <BrowserRouterComp/> */}
+    {/* <Routing/> */}
+    {/* <CustomHooks/> */}
+    {/* <PerformanceHooks/> */}
+      {/* <Hooks /> */}
       {/* <FormPage />
       <EmployeeProvider>
         <DisplayEmployee />

@@ -1,5 +1,6 @@
-import {
+import React, {
   Children,
+  useCallback,
   useEffect,
   useEffectEvent,
   useLayoutEffect,
@@ -43,26 +44,47 @@ function reducer(state, action) {
       return state;
   }
 }
-const Hooks = () => {
-  // with and without useMemo
-//   const [count, setCount] = useState(0);
-//   const [number, setNumber] = useState(0);
-//   function heavyCalculation(num) {
-//     console.log("FROM HEAVY FUNCTION...");
-//     return num * 2;
-//   }
-//     const result = heavyCalculation(count);
-// //   const result = useMemo(() => {
-// //     return heavyCalculation(count);
-// //   }, [count]);
-//   return (
-//     <>
-//       <h1>{result}</h1>
-//       <button onClick={() => setCount(count + 1)}>count+</button>
-//       <button onClick={() => setNumber(number + 1)}>number+</button>
-//     </>
-//   );
+const GreetComp = React.memo(({ onGreet }) => {
+  console.log("child");
 
+  return (
+    <>
+      <button onClick={() => onGreet()}>greet in console</button>
+    </>
+  );
+});
+const Hooks = () => {
+  //useCallback with React.memo
+  // const [count, setCount] = useState(0);
+  // const handleGreet = useCallback(() => {
+  //   console.log("Welcome to console!");
+  // },[]);
+  // console.log("parent");
+  // return (
+  //   <div>
+  //     <GreetComp onGreet={handleGreet} />
+  //     <p>{count}</p>
+  //     <button onClick={() => setCount(count + 1)}>+</button>
+  //   </div>
+  // );
+  // with and without useMemo
+  //   const [count, setCount] = useState(0);
+  //   const [number, setNumber] = useState(0);
+  //   function heavyCalculation(num) {
+  //     console.log("FROM HEAVY FUNCTION...");
+  //     return num * 2;
+  //   }
+  //     const result = heavyCalculation(count);
+  // //   const result = useMemo(() => {
+  // //     return heavyCalculation(count);
+  // //   }, [count]);
+  //   return (
+  //     <>
+  //       <h1>{result}</h1>
+  //       <button onClick={() => setCount(count + 1)}>count+</button>
+  //       <button onClick={() => setNumber(number + 1)}>number+</button>
+  //     </>
+  //   );
   // useReducer example
   //   const [todos, dispatch] = useReducer(reducer, []);
   //   const [item, setItem] = useState("");
