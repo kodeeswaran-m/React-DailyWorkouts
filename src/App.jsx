@@ -27,13 +27,16 @@
 // import HOCExample from "./9-mar/HOCandForwardRef/UsersList";
 import Dashboard from "./10-mar/ErrorBoundary/Dashboard";
 import LazyLoading from "./10-mar/LazyLoading/LazyLoading";
+import FormHooks from "./11-mar/FormHooks";
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
+    <FormHooks/>
+    {/* 10-mar */}
     {/* Error Boundary */}
-    <Dashboard/>
+    {/* <Dashboard/> */}
     {/* <LazyLoading/> */}
     {/* <HOCExample/> */}
     {/* <OtherRouters/> */}
