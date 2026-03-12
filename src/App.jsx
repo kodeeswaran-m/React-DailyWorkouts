@@ -1,6 +1,3 @@
-
-
-
 // import { StrictMode } from "react";
 // import MyComp from "./2-mar/ClassComp";
 // import Lifecycle from "./2-mar/ClassComp";
@@ -25,27 +22,36 @@
 // import NewRouter from "./9-mar/routingWithReactRouter/loader/NewRouter";
 // import OtherRouters from "./9-mar/routingWithReactRouter/OtherRouters";
 // import HOCExample from "./9-mar/HOCandForwardRef/UsersList";
+import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./10-mar/ErrorBoundary/Dashboard";
 import LazyLoading from "./10-mar/LazyLoading/LazyLoading";
 import FormHooks from "./11-mar/FormHooks";
+import PortalsComp from "./12-mar/Portals";
+import ProfilerComp from "./12-mar/Profiler";
+import Profiler from "./12-mar/Profiler";
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
-    <FormHooks/>
-    {/* 10-mar */}
-    {/* Error Boundary */}
-    {/* <Dashboard/> */}
-    {/* <LazyLoading/> */}
-    {/* <HOCExample/> */}
-    {/* <OtherRouters/> */}
-    {/* <NewRouter/> */}
-    {/* <DynamicRouting/> */}
-    {/* <BrowserRouterComp/> */}
-    {/* <Routing/> */}
-    {/* <CustomHooks/> */}
-    {/* <PerformanceHooks/> */}
+      {/* <PortalsComp /> */}
+      <BrowserRouter>
+        <PortalsComp />
+      </BrowserRouter>
+      {/* <ProfilerComp /> */}
+      {/* <FormHooks/> */}
+      {/* 10-mar */}
+      {/* Error Boundary */}
+      {/* <Dashboard/> */}
+      {/* <LazyLoading/> */}
+      {/* <HOCExample/> */}
+      {/* <OtherRouters/> */}
+      {/* <NewRouter/> */}
+      {/* <DynamicRouting/> */}
+      {/* <BrowserRouterComp/> */}
+      {/* <Routing/> */}
+      {/* <CustomHooks/> */}
+      {/* <PerformanceHooks/> */}
       {/* <Hooks /> */}
       {/* <FormPage />
       <EmployeeProvider>

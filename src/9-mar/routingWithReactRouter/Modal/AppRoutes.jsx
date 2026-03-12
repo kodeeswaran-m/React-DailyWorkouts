@@ -22,6 +22,7 @@ export default function AppRoutes() {
         <Route path="/" element={<Gallery />} />
         <Route path="/photo/:id" element={<Photo />} />
       </Routes>
+      
 
       {backgroundLocation && (
         <Routes>

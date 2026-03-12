@@ -66,50 +66,40 @@ async function addComment(prevState, formData) {
   };
 }
 const FormHooks = () => {
-    //useOptimisitc
-//   const [comments, setComments] = useState([]);
-
-//   const [optimisticComments, addOptimistic] = useOptimistic(
-//     comments,
-//     (state, newComment) => [...state, newComment],
-//   );
-
-//   const [_, formAction] = useActionState(async (prevState, formData) => {
-//     const text = formData.get("comment");
-
-//     const optimisticComment = {
-//       id: Date.now(),
-//       text,
-//       sending: true,
-//     };
-
-//     addOptimistic(optimisticComment);
-
-//     const savedComment = await addComment(prevState, formData);
-
-//     setComments((prev) => [...prev, savedComment]);
-
-//     return null;
-//   }, null);
-
-//   return (
-//     <div>
-//       <h2>Comments</h2>
-
-//       <form action={formAction}>
-//         <input name="comment" placeholder="Write a comment" />
-//         <button type="submit">Post</button>
-//       </form>
-
-//       <ul>
-//         {optimisticComments.map((c) => (
-//           <li key={c.id}>
-//             {c.text} {c.sending && "(Sending...)"}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
+  //useOptimisitc
+    const [comments, setComments] = useState([]);
+    const [optimisticComments, addOptimistic] = useOptimistic(
+      comments,
+      (state, newComment) => [...state, newComment],
+    );
+    const [_, formAction] = useActionState(async (prevState, formData) => {
+      const text = formData.get("comment");
+      const optimisticComment = {
+        id: Date.now(),
+        text,
+        sending: true,
+      };
+      addOptimistic(optimisticComment);
+      const savedComment = await addComment(prevState, formData);
+      setComments((prev) => [...prev, savedComment]);
+      return null;
+    }, null);
+    return (
+      <div>
+        <h2>Comments</h2>
+        <form action={formAction}>
+          <input name="comment" placeholder="Write a comment" />
+          <button type="submit">Post</button>
+        </form>
+        <ul>
+          {optimisticComments.map((c) => (
+            <li key={c.id}>
+              {c.text} {c.sending && "(Sending...)"}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   //useActionState
   //   const [state, formAction, isPending] = useActionState(submitUser, {
   //     message: "",
@@ -123,7 +113,6 @@ const FormHooks = () => {
   //       <p>{state.message}</p>
   //     </form>
   //   );
-
   //useFormStatus
   //   return (
   //     <form action={login}>
