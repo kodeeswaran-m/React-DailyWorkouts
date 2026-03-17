@@ -29,15 +29,19 @@ import FormHooks from "./11-mar/FormHooks";
 import PortalsComp from "./12-mar/Portals";
 import ProfilerComp from "./12-mar/Profiler";
 import Profiler from "./12-mar/Profiler";
+import TestingComponent from "./13-mar/TestingComponent";
+
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
+      <TestingComponent />
+      {/* // */}
       {/* <PortalsComp /> */}
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <PortalsComp />
-      </BrowserRouter>
+      </BrowserRouter> */}
       {/* <ProfilerComp /> */}
       {/* <FormHooks/> */}
       {/* 10-mar */}
