@@ -30,13 +30,24 @@ import PortalsComp from "./12-mar/Portals";
 import ProfilerComp from "./12-mar/Profiler";
 import Profiler from "./12-mar/Profiler";
 import TestingComponent from "./13-mar/TestingComponent";
+import Practice from "./17-mar/Practice";
+import MultiStepForm from "./17-mar";
+import CounterWithHistory from "./17-mar";
+import PracticeComp from "./18-mar/Practice";
+import { TodoProvider } from "./18-mar/Context";
 
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
-      <TestingComponent />
+      <TodoProvider>
+        <PracticeComp />
+      </TodoProvider>
+      {/* <Practice /> */}
+      {/* <CounterWithHistory/> */}
+      {/* <MultiStepForm/> */}
+      {/* <TestingComponent /> */}
       {/* // */}
       {/* <PortalsComp /> */}
       {/* <BrowserRouter>
