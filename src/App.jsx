@@ -35,15 +35,21 @@ import MultiStepForm from "./17-mar";
 import CounterWithHistory from "./17-mar";
 import PracticeComp from "./18-mar/Practice";
 import { TodoProvider } from "./18-mar/Context";
+import ReduxPractice from "./19-mar/ReduxPractice";
+import { Provider } from "react-redux";
+import { store } from "./19-mar/redux/store";
 
 // import StrictModeComp from "./3-mar/StrictMode";
 
 function App() {
   return (
     <>
-      <TodoProvider>
+      <Provider store={store}>
+        <ReduxPractice />
+      </Provider>
+      {/* <TodoProvider>
         <PracticeComp />
-      </TodoProvider>
+      </TodoProvider> */}
       {/* <Practice /> */}
       {/* <CounterWithHistory/> */}
       {/* <MultiStepForm/> */}
